@@ -97,10 +97,209 @@
 </head>
 <body>
     <div class="container">
-        <h2>Hello world!!</h2>
-        <h3>This site is a gift for all the curious kids out there.</h3>
+        <h2>Gun with bullets</h2>
+        
+        <h3>Illegal things to learn in technology.</h3>
     </div>
 
-    <p></p>
+    <p>================================================================================
+
+DDOS ATTACKS EXPLAINED 
+
+================================================================================
+
+
+
+1. WHAT IS A DOS / DDOS ATTACK?
+
+--------------------------------------------------------------------------------
+
+Think of a website like a small coffee shop with one cashier:
+
+
+
+- A normal day: Customers walk in, order coffee, pay, and leave.
+
+- A DoS (Denial of Service) attack: One annoying customer stands at the register 
+
+  asking 500 questions a second, refusing to pay, so nobody else can buy coffee.
+
+- A DDoS (Distributed Denial of Service) attack: A mob of 10,000 people rushes 
+
+  into the shop all at once. Even if they are just asking for a glass of water, 
+
+  they crowd the doors, block the registers, and real customers can't even get inside.
+
+
+
+In computer terms:
+
+- DoS comes from one machine.
+
+- DDoS comes from hundreds or thousands of machines simultaneously (usually a 
+
+  "botnet"—a network of infected home computers, smart TVs, or webcams controlled 
+
+  by a hacker).
+
+
+
+
+
+2. THE THREE MAIN WAYS THEY TAKE SITES DOWN
+
+--------------------------------------------------------------------------------
+
+
+
+A. Clogging the Internet Pipe (Volumetric Attacks)
+
+   - Real-world analogy: Ordering 5,000 pizzas to someone's front door so their 
+
+     driveway is physically blocked.
+
+   - How it works: Attackers spam gigabytes of fake data at a server. The internet 
+
+     connection gets completely saturated, dropping real user traffic.
+
+   - Example: UDP Floods, DNS Amplification (tricking open servers into bouncing 
+
+     massive replies back at the victim).
+
+
+
+B. Wasting Server Memory / Open Connections (Protocol Attacks)
+
+   - Real-world analogy: Calling a restaurant, saying "Hold on a second, let me 
+
+     check what I want," and leaving the phone off the hook. Do that on all lines, 
+
+     and no one else can call in.
+
+   - How it works: Computers need to shake hands (TCP handshake) before talking. 
+
+     The attacker initiates thousands of connections, the server reserves memory 
+
+     waiting for an answer, but the attacker never finishes the handshake.
+
+   - Example: TCP SYN Flood.
+
+
+
+C. Overloading the Server's Brain (Application Layer Attacks / Layer 7)
+
+   - Real-world analogy: Walking into a library and asking the librarian to find 
+
+     every book containing the letter "E" in chapter 3.
+
+   - How it works: The attacker sends real-looking web requests, but targets the 
+
+     slowest, heaviest parts of the website (like running search queries, complex 
+
+     database pulls, or generating PDFs).
+
+   - Example: HTTP Floods, Slowloris.
+
+
+
+
+
+3. THE FAMOUS OLD-SCHOOL TOOLS: LOIC AND HOIC
+
+--------------------------------------------------------------------------------
+
+
+
+Around 2010–2012, hacking groups (like Anonymous) made headlines using two free 
+
+tools that anyone could download and click a button to join an attack.
+
+
+
+A. LOIC (Low Orbit Ion Cannon)
+
+   - What it was: A very basic software tool with a simple button that let 
+
+     regular users flood an IP address with network packets.
+
+   - "Hivemind Mode": Users could connect their app to an IRC chatroom so one 
+
+     organizer could command thousands of computers to hit a target at once.
+
+   - The huge mistake users made: LOIC had zero protection. It fired traffic 
+
+     directly from the user's home internet connection. Police easily looked at 
+
+     the server logs, saw everyone's home IP address, and knocked on their doors. 
+
+     Many teenagers got arrested simply because they downloaded and ran LOIC.
+
+
+
+B. HOIC (High Orbit Ion Cannon)
+
+   - What it was: The upgrade to LOIC. Instead of spamming raw network packets, 
+
+     it focused entirely on web traffic (HTTP requests).
+
+   - Key change: It used "booster scripts" to randomize the requests. Instead of 
+
+     hitting one URL over and over, it hit random pages and used fake browser 
+
+     names to confuse simple firewalls.
+
+   - It was much better at knocking web servers offline than LOIC, but it still 
+
+     didn't hide the user's real IP address unless they manually routed it 
+
+     through proxies.
+
+
+
+
+
+4. HOW MODERN WEBSITES DEFEND THEMSELVES
+
+--------------------------------------------------------------------------------
+
+
+
+Today, single servers don't stand alone against traffic. They use modern shields:
+
+
+
+1. CDNs & Proxies (like Cloudflare):
+
+   - Traffic never hits the actual server directly. It hits Cloudflare's massive 
+
+     global network first. The CDN serves cached static files (HTML, images, CSS) 
+
+     and absorbs the brunt of the traffic.
+
+
+
+2. Rate Limiting:
+
+   - Setting simple rules: "If any IP address sends more than 50 requests in 
+
+     10 seconds, block them for 5 minutes."
+
+
+
+3. Captchas & Challenges:
+
+   - When traffic spikes abnormally, the firewall forces incoming visitors to 
+
+     solve a challenge or verify they are a real browser before letting them in.
+
+
+
+4. Server-Side Caching:
+
+   - Storing database results in memory so the server doesn't have to query 
+
+     the database on every single page load.
+
+================================================================================</p>
 </body>
 </html>
